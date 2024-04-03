@@ -1,0 +1,16 @@
+{
+  "name": "GraphQL",
+  "version": "1.0.0",
+  "description": "diving deep into graphql",
+  "main": "index.js",
+  "author": "Mugisha Isaac",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "dependencies": {
+    "apollo-server": "^3.13.0",
+    "graphql": "^16.8.1",
+    "nodemon": "^3.1.0"
+  }
+}
