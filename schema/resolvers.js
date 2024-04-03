@@ -23,6 +23,12 @@ const resolvers = {
         const movie = _.find(MoviesList, {name: movieName});
         return movie;
       }
+    },
+
+    User:{
+        favoriteMovies: () =>{
+            return MoviesList;
+        }
     }
 }
 
