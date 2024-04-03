@@ -4,7 +4,16 @@ const UsersList = [
     name: 'John',
     username: 'John Doe',
     age: 20,
-    nationality: 'Rwanda'
+    nationality: 'Rwanda',
+    friends:[
+        {
+            id: 3,
+            name: 'Joshua',
+            username: 'John Ndikumwenayo',
+            age: 20,
+            nationality: 'Rwanda'
+          },
+    ]
   },
   {
     id: 2,
@@ -18,7 +27,16 @@ const UsersList = [
     name: 'Joshua',
     username: 'John Ndikumwenayo',
     age: 20,
-    nationality: 'Rwanda'
+    nationality: 'Rwanda',
+    friends:[
+        {
+            id: 4,
+            name: 'Mucyo',
+            username: 'James',
+            age: 20,
+            nationality: 'Rwanda'
+          } 
+    ]
   },
   {
     id: 4,
