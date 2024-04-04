@@ -3,7 +3,6 @@ const _ = require("lodash");
 
 const resolvers = {
     Query:{
-
         // user resolvers
       users: () =>{
         return UsersList;
@@ -29,6 +28,13 @@ const resolvers = {
         favoriteMovies: () =>{
             return _.filter(MoviesList, (movie) => movie.yearOfPublication >= 2000 && movie.yearOfPublication <= 2010 );
         }
+    },
+
+    Mutation:{
+      createUser: (parent,args) => {
+        const user = args.input;
+        console.log(user);
+      }
     }
 }
 
