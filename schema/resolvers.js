@@ -45,6 +45,16 @@ const resolvers = {
            UsersList[userIndex] = Object.assign({},UsersList[userIndex],user);
            return UsersList[userIndex];
         }
+      },
+
+      deleteUser: (parent,args) =>{
+        const id = args.id;
+        const userIndex = UsersList.findIndex(user => Number(user.id) === Number(id));
+        if(userIndex !== -1){
+          const userToDelete = UsersList[userIndex];
+          _.remove(UsersList, (user) => user.id === Number(id));
+          return userToDelete;
+        }
       }
     }
 }
