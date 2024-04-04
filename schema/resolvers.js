@@ -27,7 +27,7 @@ const resolvers = {
 
     User:{
         favoriteMovies: () =>{
-            return MoviesList;
+            return _.filter(MoviesList, (movie) => movie.yearOfPublication >= 2000 && movie.yearOfPublication <= 2010 );
         }
     }
 }
