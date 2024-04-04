@@ -49,9 +49,8 @@
 .userCardsContainer{
   width: 100%;
   padding-top: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   padding-bottom: 50px;
 }
 

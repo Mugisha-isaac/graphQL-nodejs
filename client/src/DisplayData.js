@@ -55,7 +55,7 @@ const DisplayData = () => {
         username: '',
     })
 
-  const { data, loading, error } = useQuery(QUERY_ALL_USERS);
+  const { data, loading, error, refetch } = useQuery(QUERY_ALL_USERS);
   const [fetchMovie, {data: searchedMovieData,loading:movieSearchLoading,error: movieSearchedError}] = useLazyQuery(
     GET_MOVIE_BY_NAME
     );
@@ -119,6 +119,12 @@ const DisplayData = () => {
                     input:newUser
                 }
             })
+            setNewUser({
+                name: '',
+                age: 0,
+                username: ''
+            })
+            refetch();
         }}>Create User</button>
       </div>
     </div>
