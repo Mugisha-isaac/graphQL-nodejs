@@ -37,6 +37,14 @@ const resolvers = {
         user.id = lastId + 1;
         UsersList.push(user);
         return user;
+      },
+      updateUser: (parent,args) =>{
+        const {username,user} = args.input;
+        const userIndex = UsersList.findIndex(user => user.username === username);
+        if(userIndex !== -1){
+           UsersList[userIndex] = Object.assign({},UsersList[userIndex],user);
+           return UsersList[userIndex];
+        }
       }
     }
 }
