@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+
+.userCardsContainer{
+  width: 100%;
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.userCard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #808080;
+}
