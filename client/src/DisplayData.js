@@ -46,6 +46,19 @@ const CREATE_USER_MUTATION = gql`
     }
 `;
 
+
+const DELETE_USER_MUTATION = gql`
+   mutation DeleteUser($id:ID!){
+    deleteUser(id:$id){
+        id,
+        name,
+        username,
+        age,
+        nationality
+    }
+   }
+`;
+
 const DisplayData = () => {
 
     const [searchedMovie,setSearchedMovie] = useState('');
@@ -61,6 +74,7 @@ const DisplayData = () => {
     );
 
   const [createUser] = useMutation(CREATE_USER_MUTATION);
+  const [deleteUser] = useMutation(DELETE_USER_MUTATION);
   if(loading){
     return(
         <h3>Data is loading.......</h3>
@@ -71,9 +85,6 @@ const DisplayData = () => {
     console.log(`Error found ${error}`)
   }
 
-  console.log("data is....", data)
-  console.log("error found is.......", error)
-
   return (
     <div className="wrapper">
         <div className="userCardsContainer">
@@ -82,6 +93,15 @@ const DisplayData = () => {
             <span>Name: {user.name}</span>
             <span>age: {user.age}</span>
             <span>username: {user.username}</span>
+            <button onClick={()=>{
+                deleteUser({
+                    variables:{
+                        id: user.id
+                    }
+                });
+
+                refetch();
+            }}>Delete</button>
         </div>
       ))}
 
