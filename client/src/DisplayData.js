@@ -59,6 +59,18 @@ const DELETE_USER_MUTATION = gql`
    }
 `;
 
+const UPDATE_USER = gql`
+   mutation UpdateUser($input: updateUserInput!){
+    updateUser(input:$input){
+        id,
+        name,
+        age,
+        username,
+        nationality
+    }
+   }
+`;
+
 const DisplayData = () => {
 
     const [searchedMovie,setSearchedMovie] = useState('');
@@ -93,6 +105,7 @@ const DisplayData = () => {
             <span>Name: {user.name}</span>
             <span>age: {user.age}</span>
             <span>username: {user.username}</span>
+            <div>
             <button onClick={()=>{
                 deleteUser({
                     variables:{
@@ -102,6 +115,9 @@ const DisplayData = () => {
 
                 refetch();
             }}>Delete</button>
+
+            <button>Update</button>
+            </div>
         </div>
       ))}
 
