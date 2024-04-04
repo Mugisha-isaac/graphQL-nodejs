@@ -33,7 +33,10 @@ const resolvers = {
     Mutation:{
       createUser: (parent,args) => {
         const user = args.input;
-        console.log(user);
+        const lastId = UsersList[UsersList.length -1].id;
+        user.id = lastId + 1;
+        UsersList.push(user);
+        return user;
       }
     }
 }
